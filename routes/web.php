@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\mahasiswaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,20 +14,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('index', function () {
-    return view('index');
-});
-
-Route::get('produk', function () {
-    return view('produk');
-});
-
-Route::get('mahasiswa', function () {
-    return view('mahasiswa');
-});
-
-Route::get('profile', function () {
-    $nama = 'Egha';
-    //return view('profile', compact('nama'));
-    return view('profile')->with('nama', $nama);
-});
+Route::resource('mahasiswa', mahasiswaController::class);
